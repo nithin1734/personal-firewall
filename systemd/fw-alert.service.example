@@ -1,0 +1,13 @@
+[Unit]
+Description=Firewall Alert Sender (example)
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Environment=FW_WEBHOOK=https://example.com/your-webhook
+ExecStart=/usr/bin/python3 /opt/personal-firewall/alerts/fw_alert_sender.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

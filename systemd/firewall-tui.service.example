@@ -1,0 +1,12 @@
+[Unit]
+Description=Personal Firewall TUI (example)
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/python3 /opt/personal-firewall/tui/firewall_tui.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
